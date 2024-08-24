@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <h1 class="text-center mb-4">File Upload Area</h1>
+
+  <!-- Drop Area -->
+  <div class="drop-area border border-primary rounded p-4 text-center" 
+       (click)="fileInput.click()" 
+       (drop)="onDrop($event)" 
+       (dragover)="onDragOver($event)">
+    <p class="mb-0 text-primary"  *ngIf="!selectedFile">Drag & Drop a file here or click to select a file</p>
+    <p class="mb-0 text-primary" *ngIf="selectedFile && selectedFile.name">{{selectedFile.name}}</p>
+    <input type="file" #fileInput (change)="onFileChange($event)" style="display: none;" />
+  </div>
+
+  <!-- Swipeable Button -->
+  <div class="text-center mt-4">
+    <button class="btn p-0 swipe-btn" (click)="uploadFile()">
+      <label class="switch">
+        <input type="checkbox" #myCheckbox>
+        <span class="slider"></span>
+        <span class="buttonText">{{buttonText}}</span>
+      </label>
+    </button>
+    
+  </div>
+
+  <!-- Display Document -->
+  <div *ngIf="pdfUrl" class="mt-4">
+    <h2 class="text-center">Uploaded Document</h2>
+    <span  class="w-100" style="height: 600px; border: none;">{{pdfUrl}}</span>
+  </div>
+</div>
