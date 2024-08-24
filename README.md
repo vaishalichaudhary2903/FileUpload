@@ -41,7 +41,7 @@ This project demonstrates a basic Angular application with Bootstrap for styling
 
 First, clone the repository to your local machine:
 
-git clone https://github.com/your-repo/file-upload-app.git
+git clone https://github.com/vaishalichaudhary2903/FileUpload.git
 cd upload
 
 ### 2. Install Angular Dependencies
